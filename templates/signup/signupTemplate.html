@@ -1,0 +1,26 @@
+<style>
+        input[type=text], input[type=password], input[type=email] {
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            border: 3px solid #ccc;
+        }
+        input[type=submit] {
+            border: 3px solid #47476b;
+            color: #fff;
+            background-color: #47476b;
+        }
+        input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+            border: 3px solid #555;
+        }
+    </style>
+<center>
+    <h3>Signup Page</h3>
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" name="signupbtn" value="Submit">
+        {{ result }}
+    </form>
+</center>

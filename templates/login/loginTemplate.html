@@ -1,0 +1,28 @@
+<style>
+        input[type=text], input[type=password] {
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            border: 3px solid #ccc;
+        }
+        input[type=submit] {
+            border: 3px solid #47476b;
+            color: #fff;
+            background-color: #47476b;
+        }
+        input[type=text]:focus, input[type=password]:focus {
+            border: 3px solid #555;
+        }
+    </style>
+<center><h2>Login</h2></center>
+<form action='#' method="POST">
+    {% csrf_token %}
+    <center>
+    <table>
+        {{ form.as_table }}     <!--See html that django writes in browser using view page code-->
+    </table>
+    <input type="submit" name="login" value="Login">
+    <input type="submit" name="signup" value="SignUp">    <!--*See https://stackoverflow.com/a/2011023/10774497 -->
+    <p>{{ result }}</p>
+    <p>{{ welcomeUser }}</p>
+    </center>
+</form>
